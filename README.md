@@ -1,7 +1,7 @@
 # AdaEn-Net
 In this work, we present AdaEn-Net, a self-adaptive 2D–3D ensemble of Fully Convolutional Netowrks (FCNs) for 3D medical image segmentation that incorporates volumetric data and adapts to a particular dataset by optimizing both the model’s performance and size. The AdaEn-Net consists of a 2D FCN that extracts intra-slice information and a 3D FCN that exploits inter-slice information. The architecture and hyperparameters of the 2D and 3D architectures are found through a multiobjective evolutionary based algorithm that maximizes the expected segmentation accuracy and minimizes the number of parameters in the network.
 
-![alt text](https://github.com/mariabaldeon/EMONAS/blob/main/images/Fig.%201.%20Structure%20Search%20Space.jpg)
+![alt text](https://github.com/mariabaldeon/AdaEn-Net/blob/main/Images/1-s2.0-S0893608020300848-gr3.jpg)
 
 # Requirements
 * Python 3.7
