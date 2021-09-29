@@ -32,7 +32,7 @@ The output will for both will be a: (1) a .csv file named *pareto_solutions.csv*
 * (2) In the *SearchLogs* folder the training loss and validation loss for each architecture trained during the search will be saved, plus the time it took to run each generation and the whole search. 
 
 Due to the stochastic nature of the search, each run will end with a different approximate Pareto Front. To obtain the best results your must run the search with different seeds and select the architecture that has the best validation performance after fully training it.  
-Finally, the parameters used to perform the search are located in ```main.py``` in the ```params["SearchParams"]``` dictionary. They are set according to the paper, if you want to change any parameter, please do it here.  
+Finally, the parameters used to perform the search are located in ```main.py``` in the ```params["SearchParams2D"]``` dictionary for the 2D FCN search and in the ```params["SearchParams3D"]``` dictionary for the 3D FCN search. They are set according to the paper, if you want to change any parameter, please do it here.  
 
 # Train model
 To fully train the 2D FCN architecture run:
