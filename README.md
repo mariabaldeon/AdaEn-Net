@@ -8,9 +8,9 @@ In this work, we present AdaEn-Net, a self-adaptive 2D–3D ensemble of Fully Co
 * Numpy 1.19.2
 * Keras 2.3.1
 * Tensorflow 1.14.0
-* lhsmdu 1.1
-* Pygmo 2.16.1
 * Simpleitk 2.0.2
+* Pandas 1.0.1
+* Scipy 1.4.1
 
 # Dataset
 The prostate MR images from the PROMISE12 challenge is available [here](https://promise12.grand-challenge.org/). Firts, **you must download the dataset, put all images in a folder named *Images* and locate it in */Datasets/Promise12* for the code to run** (the path set by default for the image dataset is *Datasets/Promise12/Images)*.
