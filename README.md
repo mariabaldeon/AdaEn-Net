@@ -17,7 +17,7 @@ The prostate MR images from the PROMISE12 challenge is available [here](https://
 The parameters used to preprocess the data are located in ```main.py``` in the ```params["DataManager"]``` dictionary. If you want to change any parameter, please do it here. 
 
 # Architecture search 
-The architecture search is done for the 2D FCN and 3D FCN. To carry out the 2D FCN architecture search run:
+The architecture search must be performed for the 2D FCN and 3D FCN. To carry out the 2D FCN architecture search run:
 ```
 nohup python3 main.py -search2D & 
 ```
@@ -26,7 +26,7 @@ To carry out the 3D FCN architecture search run:
 nohup python3 main.py -search3D & 
 ```
 
-The output will for both will be a: (1) a .csv file named *pareto_solutions.csv* that contains all the solutions that approximate the Pareto Front. (2) *SearchLogs* folder with the logs of the search 
+The output for the 2D FCN search will be saved in the directory *EvalLogs/Results2D* and for the 3D FCN search in *EvalLogs/Results3D*. There will be two outputs: (1) a .csv file named *pareto_solutions.csv* that contains all the solutions that approximate the Pareto Front. (2) a .csv file named *models_checked.csv* that contains all architectures tested during evolution.
 
 * (1) In the *pareto_solutions.csv* file, each pareto solution is in a row.  The solution in the first row minimizes the expected segmentation error, and the solution in the last row minimizes the size of the network. Select the architecture that best satisfies your requirements. For our experiments, we select the solution that minimizes the expected segmentation error (1st row). For each solution, the csv file provides the optimized hyperparameters and training information: learning_rate= learning rate, node2_inp = input to node 2, node3_inp = input to node 3, node4_inp= input to node 4, ops1= convolutional operation for node 1, ops2= convolutional operation for node 2, ops3= convolutional operation for node 3, ops4= convolutional operation for node 4, num_cells= total number of encoder-decoder cells, num_filters= number of filters for the first cell, total_loss= expected segmentation error loss, val_loss= validation loss, train_loss= training loss, and param_count= number of trainable parameters in the architecture. Note the validation performance in this search is not the final performance of the architecture. We only train for a maximum of 120 epochs during the optimization process. You must fully train the architecture from sctrach (see the directions above to fully train) and the select the weights that minimizes the validation error. 
 * (2) In the *SearchLogs* folder the training loss and validation loss for each architecture trained during the search will be saved, plus the time it took to run each generation and the whole search. 
